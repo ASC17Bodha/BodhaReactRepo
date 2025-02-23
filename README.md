@@ -9,5 +9,5 @@ This project is a React assessment for a Video Catalog application. Since the pr
 
 - Before running the application, ensure to start the json server using the following command:
 ```bash
-json-server --watch src/sample-server/movies.json --port 3001
+json-server --watch src/sample-server/movies.json --port 3004
 ``` 
