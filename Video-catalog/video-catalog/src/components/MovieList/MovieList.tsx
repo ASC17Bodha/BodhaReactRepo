@@ -82,10 +82,10 @@ const MovieList = () => {
   const endResultNumber = (page - 1) * rowsPerPage + movies.length;
 
   return (
-    <div>
+    <div className="container">
       <h1>Video Catalog</h1>
       {/* Flex container: Pagination, Search Input, and Video Type buttons side by side */}
-      <div className="d-flex align-items-center gap-3 mb-3">
+      <div className="movie-controls">
         <Pagination
           page={page}
           totalPages={totalPages}
@@ -105,16 +105,32 @@ const MovieList = () => {
           />
         </div>
         <div className="btn-group" role="group" aria-label="Filter by category">
-          <button type="button" className="btn btn-primary" onClick={() => handleTypeChange("")}>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => handleTypeChange("")}
+          >
             ANY
           </button>
-          <button type="button" className="btn btn-danger" onClick={() => handleTypeChange("movie")}>
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={() => handleTypeChange("movie")}
+          >
             Movies
           </button>
-          <button type="button" className="btn btn-warning" onClick={() => handleTypeChange("series")}>
+          <button
+            type="button"
+            className="btn btn-warning"
+            onClick={() => handleTypeChange("series")}
+          >
             Series
           </button>
-          <button type="button" className="btn btn-success" onClick={() => handleTypeChange("episode")}>
+          <button
+            type="button"
+            className="btn btn-success"
+            onClick={() => handleTypeChange("episode")}
+          >
             Episodes
           </button>
         </div>
@@ -123,14 +139,15 @@ const MovieList = () => {
       <div className="mb-3">
         {totalResults > 0 ? (
           <span>
-            Showing {startResultNumber} to {endResultNumber} of {totalResults} result
+            Showing {startResultNumber} to {endResultNumber} of {totalResults}{" "}
+            result
             {totalResults !== 1 ? "s" : ""}
           </span>
         ) : (
           <span>No results found.</span>
         )}
       </div>
-      
+
       {!loading && error && <ErrorAlert error={error} />}
       <table className="movie-table">
         <thead>
@@ -146,12 +163,19 @@ const MovieList = () => {
           {movies.map((movie, index) => (
             <tr key={index}>
               <td>
-                <img src={movie.Poster} alt={movie.Title} className="table-poster" />
+                <img
+                  src={movie.Poster}
+                  alt={movie.Title}
+                  className="table-poster"
+                />
               </td>
               <td>{movie.Title}</td>
               <td>{movie.Year}</td>
               <td>
-                <button type="button" className="btn btn-primary btn-sm tiny-btn my-1">
+                <button
+                  type="button"
+                  className="btn btn-primary btn-sm tiny-btn my-1"
+                >
                   {movie.Type}
                 </button>
               </td>

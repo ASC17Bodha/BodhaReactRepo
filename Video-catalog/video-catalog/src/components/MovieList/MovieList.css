@@ -28,7 +28,7 @@
     color: #666;
   }
    */
-
+/* 
    .movie-table {
     width: 100%;
     border-collapse: collapse;
@@ -59,6 +59,92 @@
 
   .tiny-btn {
     padding: 0.15rem 0.25rem; /* further reduce padding */
-    font-size: 0.65rem;       /* smaller font size */
-  }
-  
+    /* font-size: 0.65rem;       smaller font size */
+
+   /* Container for pagination, search, and type buttons */
+.movie-controls {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+  margin-right: 4px;
+  margin-bottom: 1rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Search input custom width */
+.movie-controls .form-control {
+  width: 350px;
+}
+
+/* Reuse Bootstrap button styling while enforcing text capitalization */
+.btn {
+  text-transform: capitalize;
+}
+
+/* Specific button color overrides (if needed) */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 2px;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  border-radius: 2px;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #212529;
+  border-radius: 4px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  border-radius: 4px;
+}
+
+/* Movies table styling */
+.movie-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.movie-table th,
+.movie-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.movie-table th {
+  background-color: #f2f2f2;
+}
+
+/* Poster image sizing */
+.table-poster {
+  width: 50px;
+  height: auto;
+}
+
+/* Optional: Override pagination spacing if needed */
+.pagination {
+  margin: 0;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+}
