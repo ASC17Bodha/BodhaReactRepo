@@ -1,4 +1,4 @@
-import { Spinner,Alert } from "react-bootstrap";
+import { Alert } from "react-bootstrap";
 
 const Loading = () => {
     return (

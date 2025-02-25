@@ -33,10 +33,10 @@ interface IOMDBResponse {
 }
 
 const getMovies = async (searchQuery: string, page: number, type: string) => {
-  
+  const query = searchQuery || "movie"; // Fallback to "movie" if empty
   const typeQuery = type ? `&type=${type}` : "";
   const response = await axios.get<IOMDBResponse>(
-    `https://www.omdbapi.com/?apikey=c6d94035&s=${searchQuery}&page=${page}${typeQuery}`
+    `https://www.omdbapi.com/?apikey=c6d94035&s=${query}&page=${page}${typeQuery}`
   );
   return response.data;
 };

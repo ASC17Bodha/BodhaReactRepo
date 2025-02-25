@@ -1,20 +1,20 @@
-/* Container to stack buttons above info text */
+/* Container for pagination - single line */
 .pagination-container {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-wrap: nowrap; /* Prevent wrapping to new lines */
 }
 
-/* Container to group paginator buttons together */
-.pagination-buttons {
+/* Group paginator buttons together */
+.pagination-group {
   display: flex;
   align-items: center;
 }
 
-/* Join the page number buttons together */
+/* Style page number buttons */
 .pagination-group .page-btn {
   border-radius: 0;
-  margin-left: -1px; /* overlap borders to appear joined */
+  margin-left: -1px; /* Overlap borders */
   border: 1px solid #007bff;
   background: #007bff;
   color: #fff;
@@ -33,14 +33,14 @@
   border-bottom-right-radius: 0.25rem;
 }
 
-/* Change background for active page */
+/* Active page styling */
 .pagination-group .page-btn.active,
 .pagination-group .page-btn.active:hover {
   background: #6c757d;
   border-color: #6c757d;
 }
 
-/* Style for previous/next arrow buttons */
+/* Previous/Next buttons */
 .btn-prev,
 .btn-next {
   border-radius: 0.25rem;
@@ -56,16 +56,16 @@
   font-size: 1.25rem;
 }
 
-/* Use Unicode arrows */
+/* Unicode arrows */
 .btn-prev::after {
-  content: "\2190"; /* left arrow */
+  content: "\2190"; /* Left arrow */
 }
 
 .btn-next::after {
-  content: "\2192"; /* right arrow */
+  content: "\2192"; /* Right arrow */
 }
 
-/* Change appearance when disabled */
+/* Disabled state */
 .btn-prev:disabled,
 .btn-next:disabled,
 .pagination-group .page-btn:disabled {
@@ -74,9 +74,11 @@
   color: #6c757d;
 }
 
-/* Info text below buttons */
-.pagination-info {
-  margin-top: 0.5rem;
+/* Ellipsis styling */
+.ellipsis {
+  padding: 0.375rem 0.75rem;
   font-size: 0.875rem;
   color: #333;
+  display: flex;
+  align-items: center;
 }
